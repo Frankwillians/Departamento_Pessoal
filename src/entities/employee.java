@@ -1,19 +1,30 @@
 package entities;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
 public class employee {
-    private Integer id;
+    private int id;
     private String name;
     private String address;
     private String office;
     private String sex;
-    private int age;
+    private Integer age;
     private String Status;
-   
+
+    Scanner sc = new Scanner(System.in);
+
+    List <employee> funcionario = new ArrayList<>();
+  
     public employee(){
 
     }
+    
 
-    public employee(Integer id, String name, String address, String office, String sex, int age, String status) {
+
+
+    public employee(int id, String name, String address, String office, String sex, int age, String status) {
         this.id = id;
         this.name = name;
         this.address = address;
@@ -23,25 +34,22 @@ public class employee {
         Status = status;
     }
 
-    public employee(Integer id, String name, String sex, int age) {
-        this.id = id;
-        this.name = name;
-        this.sex = sex;
-        this.age = age;
-      
-        
-    }
+    
 
 
 
-    public Integer getId() {
+    public int getId() {
         return id;
     }
 
 
-    public void setId(Integer id) {
+
+
+    public void setId(int id) {
         this.id = id;
     }
+
+
 
 
     public String getName() {
@@ -49,9 +57,13 @@ public class employee {
     }
 
 
+
+
     public void setName(String name) {
         this.name = name;
     }
+
+
 
 
     public String getAddress() {
@@ -59,9 +71,13 @@ public class employee {
     }
 
 
+
+
     public void setAddress(String address) {
         this.address = address;
     }
+
+
 
 
     public String getOffice() {
@@ -69,9 +85,13 @@ public class employee {
     }
 
 
+
+
     public void setOffice(String office) {
         this.office = office;
     }
+
+
 
 
     public String getSex() {
@@ -79,9 +99,13 @@ public class employee {
     }
 
 
+
+
     public void setSex(String sex) {
         this.sex = sex;
     }
+
+
 
 
     public int getAge() {
@@ -89,9 +113,13 @@ public class employee {
     }
 
 
+
+
     public void setAge(int age) {
         this.age = age;
     }
+
+
 
 
     public String getStatus() {
@@ -99,27 +127,65 @@ public class employee {
     }
 
 
+
+
     public void setStatus(String status) {
         Status = status;
     }
 
-    public String minorAge(String name,String address,Integer age){
+
+
+
+    public String minorAge(String name,String address,int age){
         return "Parent name: " + name + "address: " + address + age + " years";
         
     
     }
+    public void cadastro(int id, String name, String address, String office, String sex, int age, String status){
+            funcionario.add(new employee(id, name, address, office, sex, age, status));
+    }
+    public boolean hasID(int id) {
+        boolean test = false; 
+        for (employee employee : funcionario) {
+            test = false;
+            if(employee.getId() == id){
+                test = true; 
+            }
+        }
+        return test;
+    }
+
+    public void listagemFuncionarios(){    
+       for (employee employee : funcionario) {
+            System.out.println(funcionario);
+       }
+    }
+
+    public void buscaFuncionarios(String info){
+        String result;
+        for (employee employee : funcionario) {
+            if(employee.getName().equals(info) || employee.getStatus().equals(info) || employee.getOffice().equals(info) ){
+                result = employee.getAddress();
+                System.out.println(employee.toString());
+                
+            } 
+        }
+        
+    }
+
+
     public String toString(){
         return "Id:" + getId()
         +" "+
-        "Nome: " + getName()
-        +"Idade: " + getAge()
-        +"Sexo: " + getSex()
-        +"Endereço: " + getAddress()
-        +"Cargo" + getOffice()
-        +"Status: "+ getStatus();
+        "Nome:" + getName()+" "
+        +"Idade:" + getAge()+" "
+        +"Sexo:" + getSex()+" "
+        +"Endereço:" + getAddress()+" "
+        +"Cargo:" + getOffice()+" "
+        +"Status:"+ getStatus()+" ";
 
-    }
+    }}
 
-    }
+
 
 
