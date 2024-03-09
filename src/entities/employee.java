@@ -157,15 +157,13 @@ public class employee {
 
     public void listagemFuncionarios(){    
        for (employee employee : funcionario) {
-            System.out.println(funcionario);
+            System.out.println("Id:"+ employee.getId()+" "+"Nome:"+employee.getName()+" "+"Status:"+ employee.getStatus());
        }
     }
 
     public void buscaFuncionarios(String info){
-        String result;
         for (employee employee : funcionario) {
             if(employee.getName().equals(info) || employee.getStatus().equals(info) || employee.getOffice().equals(info) ){
-                result = employee.getAddress();
                 System.out.println(employee.toString());
                 
             } 
