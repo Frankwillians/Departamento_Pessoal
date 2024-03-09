@@ -3,6 +3,7 @@ package entities;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.concurrent.ExecutorCompletionService;
 
 public class employee {
     private int id;
@@ -169,6 +170,19 @@ public class employee {
             } 
         }
         
+    }
+    public void deletarFuncionario(int id){
+        for (employee employee : funcionario) {
+            
+            if(employee.getId() == id){
+                System.out.print("Voce tem certeza que deseja excluir "+employee.getName()+"? digite S/N para continuar: ");
+                String choice = sc.nextLine().toUpperCase();
+                
+                if(choice == "S"){
+                    funcionario.remove(employee);
+                }
+            }
+        }
     }
 
 
