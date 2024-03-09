@@ -92,10 +92,10 @@ public class departamentoPessoal {
                     sc.nextLine();
                     System.out.print("Digite o nome do funcionario: ");
                     String name = sc.nextLine();
-                    List<employee> result = emp.stream().filter(x -> x.getName() == name ).collect(Collectors.toList());
-                    System.out.println(result.toString());
                     for (employee x : emp){
-                        System.out.println(x.toString());
+                        if(x.getName() == name){
+                            System.out.println(x);
+                        }
                         }
                     
                 }
