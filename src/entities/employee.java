@@ -171,10 +171,10 @@ public class employee {
         }
         
     }
-    public void deletarFuncionario(int id){
+    public void deletarFuncionario(String name){
         for (employee employee : funcionario) {
             
-            if(employee.getId() == id){
+            if(employee.getName() == name){
                 System.out.print("Voce tem certeza que deseja excluir "+employee.getName()+"? digite S/N para continuar: ");
                 String choice = sc.nextLine().toUpperCase();
                 

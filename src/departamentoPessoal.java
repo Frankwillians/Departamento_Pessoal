@@ -66,9 +66,9 @@ public class departamentoPessoal {
                     funcionario.buscaFuncionarios(info);
                     break;
                 case 4:
-                    System.out.print("Digite o id do funcionario que deseja excluir: ");
-                    id = sc.nextInt();
-                    funcionario.deletarFuncionario(id);
+                    System.out.print("Digite o nome do funcionario que deseja excluir: ");
+                    String name = sc.nextLine();
+                    funcionario.deletarFuncionario(name);
                 
             
             
