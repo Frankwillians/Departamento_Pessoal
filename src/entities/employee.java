@@ -8,7 +8,20 @@ public class employee {
     private String sex;
     private int age;
     private String Status;
-    
+   
+    public employee(){
+
+    }
+
+    public employee(Integer id, String name, String address, String office, String sex, int age, String status) {
+        this.id = id;
+        this.name = name;
+        this.address = address;
+        this.office = office;
+        this.sex = sex;
+        this.age = age;
+        Status = status;
+    }
 
     public employee(Integer id, String name, String sex, int age) {
         this.id = id;
@@ -93,7 +106,20 @@ public class employee {
     public String minorAge(String name,String address,Integer age){
         return "Parent name: " + name + "address: " + address + age + " years";
         
+    
     }
+    public String toString(){
+        return "Id:" + getId()
+        +" "+
+        "Nome: " + getName()
+        +"Idade: " + getAge()
+        +"Sexo: " + getSex()
+        +"Endereço: " + getAddress()
+        +"Cargo" + getOffice()
+        +"Status: "+ getStatus();
+
+    }
+
     }
 
 
