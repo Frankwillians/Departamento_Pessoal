@@ -252,7 +252,9 @@ public class employee {
         
 
     }
-
+    public void pararProgama(){
+        System.exit(0);
+    }
 
     public String toString(){
         return "Id:" + getId()

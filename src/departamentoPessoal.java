@@ -69,6 +69,7 @@ public class departamentoPessoal {
                     System.out.println();
                     break;
                 case 0:
+                    funcionario.pararProgama();
                     break;
             
             
