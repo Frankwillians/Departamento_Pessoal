@@ -26,32 +26,7 @@ public class departamentoPessoal {
 
             switch (choice) {
                 case 1:
-                    sc.nextLine();
-                    System.out.println("============================");
-                    System.out.println("Cadastro de funcionario");
-                    System.out.println();
-                    System.out.print("Id do funcionario: ");
-                    int id = sc.nextInt();
-                    while (funcionario.hasID(id) != false){
-                        System.out.println("o id que voce digitou ja existe tente novamente: ");
-                        id = sc.nextInt();
-                    }
-                    sc.nextLine();
-                    System.out.print("Nome do funcionario: ");
-                    String nome = sc.nextLine();
-                    System.out.print("Idade do funcionario: ");
-                    int idade = sc.nextInt();
-                    sc.nextLine();
-                    System.out.print("Sexo do funcionario: ");
-                    String sexo = sc.nextLine();
-                    System.out.print("Endereço do funcionario: ");
-                    String endereco = sc.nextLine();
-                    System.out.print("Cargo do funcionario: ");
-                    String cargo = sc.nextLine();
-                    System.out.print("Status do funcionario (Contratado ou Demitido): ");
-                    String status = sc.nextLine();
-                
-                    funcionario.cadastro(id, nome, endereco, cargo, sexo, idade, status);
+                    funcionario.cadastro();
 
                    
                     break;
@@ -75,7 +50,11 @@ public class departamentoPessoal {
                 case 5:
                     funcionario.deletarFuncionario();
                     break;
+                
                 case 6:
+                    funcionario.editarFuncionario();
+                    break;
+                case 7:
                     System.out.println("================================");
                     System.out.println("Sistema de departamento pessoal");
                     System.out.println("================================");
@@ -84,8 +63,8 @@ public class departamentoPessoal {
                     System.out.println("digite: 3 - Busca de funcionarios");
                     System.out.println("digite: 4 - Detalhes do funcionario");
                     System.out.println("digite: 5 - Excluir funcionario");
-                    System.out.println("digite: 5 - Editar funcionario");
-                    System.out.println("digite: 6 - mostrar comandos");
+                    System.out.println("digite: 6 - Editar funcionario");
+                    System.out.println("digite: 7 - mostrar comandos");
                     System.out.println("============================");
                     System.out.println();
                     break;

@@ -141,8 +141,33 @@ public class employee {
         
     
     }
-    public void cadastro(int id, String name, String address, String office, String sex, int age, String status){
-            funcionario.add(new employee(id, name, address, office, sex, age, status));
+    public void cadastro(){
+        System.out.println("============================");
+        System.out.println("Cadastro de funcionario");
+        System.out.println();
+        System.out.print("Id do funcionario: ");
+        int id_e = sc.nextInt();
+        while (hasID(id_e) != false){
+            System.out.println("o id que voce digitou ja existe tente novamente: ");
+            id_e = sc.nextInt();
+        }
+        sc.nextLine();
+        System.out.print("Nome do funcionario: ");
+        String nome = sc.nextLine();
+        System.out.print("Idade do funcionario: ");
+        int idade = sc.nextInt();
+        sc.nextLine();
+        System.out.print("Sexo do funcionario: ");
+        String sexo = sc.nextLine();
+        System.out.print("Endereço do funcionario: ");
+        String endereco = sc.nextLine();
+        System.out.print("Cargo do funcionario: ");
+        String cargo = sc.nextLine();
+        System.out.print("Status do funcionario (Contratado ou Demitido): ");
+        String stats = sc.nextLine();
+    
+            
+    funcionario.add(new employee(id_e, nome, endereco, cargo, sexo, idade, stats));
     }
     public boolean hasID(int id) {
         boolean test = false; 
@@ -189,14 +214,14 @@ public class employee {
                     System.out.println();
                 }else{
                     System.out.print("Digite o id do funcionario que deseja excluir: ");
-                    int id = sc.nextInt();
-                    if(employee.getId() == id){
+                    int id_func = sc.nextInt();
+                    if(employee.getId() == id_func){
                         sc.nextLine();
                         System.out.print("Voce tem certeza que deseja excluir "+employee.getName()+" ? digite S/N para continuar: ");
                         String choice = sc.nextLine();
                         if(choice.equals("s")){
                             funcionario.remove(employee);
-                            System.out.println(funcionario.size());
+                            
                         }
                     }
                        
@@ -206,7 +231,27 @@ public class employee {
         }
         
         }
-    
+    public void editarFuncionario(){
+        if (funcionario.size() == 0){
+            System.out.println("voce nao pode realizar essa funçao ainda!");
+            System.out.println();
+        }else{
+        
+            System.out.print("digite o id do funcionario que deseja editar: ");
+            int sts_id = sc.nextInt();
+            for (employee employee : funcionario) {
+                if(employee.getId() == sts_id){
+                    sc.nextLine();
+                    System.out.print("Digite o novo status para esse funcionario (Contratado ou demitido): ");
+                    String sts_edit = sc.nextLine();
+                    employee.setStatus(sts_edit);
+                    System.out.println();
+                }
+        }}
+        
+        
+
+    }
 
 
     public String toString(){
