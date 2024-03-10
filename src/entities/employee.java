@@ -3,7 +3,6 @@ package entities;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-import java.util.concurrent.ExecutorCompletionService;
 
 public class employee {
     private int id;
@@ -165,20 +164,28 @@ public class employee {
     public void buscaFuncionarios(String info){
         for (employee employee : funcionario) {
             if(employee.getName().equals(info) || employee.getStatus().equals(info) || employee.getOffice().equals(info) ){
-                System.out.println(employee.toString());
-                
-            } 
+                System.out.println("Id:"+ employee.getId()+" "+"Nome:"+employee.getName()+" "+"Status:"+ employee.getStatus());
+                System.out.println();
+            }
         }
         
     }
-    public void deletarFuncionario(String name){
+    public void detalharFuncionario(int id){
+        for (employee employee : funcionario) {
+            if(employee.getId() == id){
+                System.out.println(employee.toString());
+                System.out.println();
+            }
+        }
+    }
+    public void deletarFuncionario(int identificador){
         for (employee employee : funcionario) {
             
-            if(employee.getName() == name){
-                System.out.print("Voce tem certeza que deseja excluir "+employee.getName()+"? digite S/N para continuar: ");
-                String choice = sc.nextLine().toUpperCase();
+            if(employee.getId() == identificador){
+                System.out.print("Voce tem certeza que deseja excluir "+employee.getName()+" ? digite S/N para continuar: ");
+                String choice = sc.nextLine();
                 
-                if(choice == "S"){
+                if(choice.equals("s")){
                     funcionario.remove(employee);
                 }
             }
@@ -196,7 +203,8 @@ public class employee {
         +"Cargo:" + getOffice()+" "
         +"Status:"+ getStatus()+" ";
 
-    }}
+    }
+}
 
 
 
