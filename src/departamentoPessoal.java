@@ -33,6 +33,7 @@ public class departamentoPessoal {
                     break;
                 case 4:
                     System.out.print("digite o id do funcionario para ver informacoes detalhadas: ");
+                    System.out.println();
                     int id_employee = sc.nextInt();
                     funcionario.detalharFuncionario(id_employee); 
                     break;   

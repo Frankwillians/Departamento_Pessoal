@@ -12,16 +12,18 @@ public class employee {
     private String sex;
     private Integer age;
     private String Status;
+    private String respName;
+    private int respAge;
+    private String respParent; 
 
     Scanner sc = new Scanner(System.in);
 
     List <employee> funcionario = new ArrayList<>();
+
   
     public employee(){
 
     }
-    
-
 
 
     public employee(int id, String name, String address, String office, String sex, int age, String status) {
@@ -32,9 +34,66 @@ public class employee {
         this.sex = sex;
         this.age = age;
         Status = status;
+        
+    }
+
+    public employee(int id, String name, String address, String office, String sex, int age, String status,String respName, int respAge, String respParent) {
+        this.id = id;
+        this.name = name;
+        this.address = address;
+        this.office = office;
+        this.sex = sex;
+        this.age = age;
+        Status = status;
+        this.respName = respName;
+        this.respAge = respAge;
+        this.respParent = respParent;
+        
     }
 
     
+
+
+
+    public String getRespName() {
+        return respName;
+    }
+
+
+
+
+    public void setRespName(String respName) {
+        this.respName = respName;
+    }
+
+
+
+
+    public int getRespAge() {
+        return respAge;
+    }
+
+
+
+
+    public void setRespAge(int respAge) {
+        this.respAge = respAge;
+    }
+
+
+
+
+    public String getRespParent() {
+        return respParent;
+    }
+
+
+
+
+    public void setRespParent(String respParent) {
+        this.respParent = respParent;
+    }
+
 
 
 
@@ -136,11 +195,16 @@ public class employee {
 
 
 
-    public String minorAge(String name,String address,int age){
-        return "Parent name: " + name + "address: " + address + age + " years";
-        
+    public void menorResponsaveis(){
     
+       
+        
+       
+        
+        
+       
     }
+        
     public void opcoesDepartamento(){
         System.out.println("================================");
         System.out.println("Sistema de departamento pessoal");
@@ -179,10 +243,31 @@ public class employee {
         String cargo = sc.nextLine();
         System.out.print("Status do funcionario (Contratado ou Demitido): ");
         String stats = sc.nextLine();
-    
-            
-    funcionario.add(new employee(id_e, nome, endereco, cargo, sexo, idade, stats));
+        if(idade < 18){
+            System.out.println("Como o funcionario é menor de idade é preciso as informações do responsavel!");
+            System.out.println();
+            System.out.print("Digite o nome do responsavel: ");
+            String respName = sc.nextLine();
+        
+            System.out.print("Digite a idade do responsavel: ");
+            int respAge = sc.nextInt();
+           
+            System.out.print("parentesco (pai,mae,tio(a)...):  ");
+            sc.nextLine();
+            String RespParent = sc.nextLine();
+            System.out.println();
+            funcionario.add(new employee(id_e, nome, endereco, cargo, sexo, idade, stats, respName, respAge, RespParent));
+        }
+        else{
+            funcionario.add(new employee(id_e, nome, endereco, cargo, sexo, idade, stats));
+            System.out.println();
+        }
     }
+        
+    
+       
+        
+    
     public boolean hasID(int id) {
         boolean test = false; 
         for (employee employee : funcionario) {
@@ -213,10 +298,17 @@ public class employee {
         for (employee employee : funcionario) {
             if(employee.getId() == id){
                 System.out.println(employee.toString());
-                System.out.println();
+                if (employee.getAge() < 18) {
+                    System.out.println("Informacoes do responsavel: ");
+                    
+                    System.out.println("Nome: " + employee.getRespName() + ", " + "Idade: " + employee.getRespAge() + ", " + "Parentesco: " + employee.getRespParent()); 
+                    System.out.println();
+                }
+                }
+                
             }
         }
-    }
+    
     public void deletarFuncionario(){
         if (funcionario.size() == 0){
             System.out.println("voce nao pode realizar essa funçao ainda!");
