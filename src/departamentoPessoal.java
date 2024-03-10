@@ -73,10 +73,7 @@ public class departamentoPessoal {
                     funcionario.detalharFuncionario(id_employee); 
                     break;   
                 case 5:
-                    sc.nextLine();
-                    System.out.print("Digite o id do funcionario que deseja excluir: ");
-                    int identificador = sc.nextInt();
-                    funcionario.deletarFuncionario(identificador);
+                    funcionario.deletarFuncionario();
                     break;
                 case 6:
                     System.out.println("================================");
@@ -91,6 +88,8 @@ public class departamentoPessoal {
                     System.out.println("digite: 6 - mostrar comandos");
                     System.out.println("============================");
                     System.out.println();
+                    break;
+                case 0:
                     break;
             
             

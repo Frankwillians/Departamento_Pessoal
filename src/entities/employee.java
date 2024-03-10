@@ -178,19 +178,35 @@ public class employee {
             }
         }
     }
-    public void deletarFuncionario(int identificador){
-        for (employee employee : funcionario) {
-            
-            if(employee.getId() == identificador){
-                System.out.print("Voce tem certeza que deseja excluir "+employee.getName()+" ? digite S/N para continuar: ");
-                String choice = sc.nextLine();
-                
-                if(choice.equals("s")){
-                    funcionario.remove(employee);
+    public void deletarFuncionario(){
+        if (funcionario.size() == 0){
+            System.out.println("voce nao pode realizar essa funçao ainda!");
+            System.out.println();
+        }else{
+            for (employee employee : funcionario) {   
+                if (funcionario.size() == 1){
+                    System.out.println("Voce precisa de pelo menos dois funcionarios cadastrados para poder deletar um!");
+                    System.out.println();
+                }else{
+                    System.out.print("Digite o id do funcionario que deseja excluir: ");
+                    int id = sc.nextInt();
+                    if(employee.getId() == id){
+                        sc.nextLine();
+                        System.out.print("Voce tem certeza que deseja excluir "+employee.getName()+" ? digite S/N para continuar: ");
+                        String choice = sc.nextLine();
+                        if(choice.equals("s")){
+                            funcionario.remove(employee);
+                            System.out.println(funcionario.size());
+                        }
+                    }
+                       
+                    }
+                    
                 }
-            }
         }
-    }
+        
+        }
+    
 
 
     public String toString(){
