@@ -141,6 +141,20 @@ public class employee {
         
     
     }
+    public void opcoesDepartamento(){
+        System.out.println("================================");
+        System.out.println("Sistema de departamento pessoal");
+        System.out.println("================================");
+        System.out.println("digite: 1 - cadastro de funcionarios");
+        System.out.println("digite: 2 - Listagem de funcionarios");
+        System.out.println("digite: 3 - Busca de funcionarios");
+        System.out.println("digite: 4 - Detalhes do funcionario");
+        System.out.println("digite: 5 - Excluir funcionario");
+        System.out.println("digite: 5 - Editar funcionario");
+        System.out.println("digite: 6 - mostrar comandos");
+        System.out.println("============================");
+        System.out.println();
+    }
     public void cadastro(){
         System.out.println("============================");
         System.out.println("Cadastro de funcionario");

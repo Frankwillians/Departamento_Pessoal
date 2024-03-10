@@ -6,18 +6,7 @@ public class departamentoPessoal {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         employee funcionario = new employee();
-        System.out.println("================================");
-        System.out.println("Sistema de departamento pessoal");
-        System.out.println("================================");
-        System.out.println("digite: 1 - cadastro de funcionarios");
-        System.out.println("digite: 2 - Listagem de funcionarios");
-        System.out.println("digite: 3 - Busca de funcionarios");
-        System.out.println("digite: 4 - Detalhes do funcionario");
-        System.out.println("digite: 5 - Excluir funcionario");
-        System.out.println("digite: 5 - Editar funcionario");
-        System.out.println("digite: 6 - mostrar comandos");
-        System.out.println("============================");
-        System.out.println();
+        funcionario.opcoesDepartamento();
         while (true) {
             
             System.out.print("Digite a opção desejada: ");
@@ -55,18 +44,7 @@ public class departamentoPessoal {
                     funcionario.editarFuncionario();
                     break;
                 case 7:
-                    System.out.println("================================");
-                    System.out.println("Sistema de departamento pessoal");
-                    System.out.println("================================");
-                    System.out.println("digite: 1 - cadastro de funcionarios");
-                    System.out.println("digite: 2 - Listagem de funcionarios");
-                    System.out.println("digite: 3 - Busca de funcionarios");
-                    System.out.println("digite: 4 - Detalhes do funcionario");
-                    System.out.println("digite: 5 - Excluir funcionario");
-                    System.out.println("digite: 6 - Editar funcionario");
-                    System.out.println("digite: 7 - mostrar comandos");
-                    System.out.println("============================");
-                    System.out.println();
+                    funcionario.opcoesDepartamento();
                     break;
                 case 0:
                     funcionario.pararProgama();
