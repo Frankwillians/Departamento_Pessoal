@@ -337,9 +337,14 @@ public class employee {
 
                   
                 if (pageNumber < 1 ) {
-                    pageNumber += 1;
+                    pageNumber = 1;
                     System.out.println("Não existem paginas anteriores... ");
                     System.out.println();
+                }
+
+                if (funcionario.size() > from ) {
+                   
+                    System.out.println("Não existem mais funcionarios");
                 }
         
                 
