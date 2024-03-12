@@ -281,33 +281,63 @@ public class employee {
 
     public void listagemFuncionarios(){    
        
+       
         int pageNumber = 1;
         
         int RESULTS_PER_PAGE = 10;
-    
+
+        
         // algorithm
-        int to = pageNumber * RESULTS_PER_PAGE;
-        int from = to - RESULTS_PER_PAGE;
-        for (int i = from; i < to; i++) {
+        while (funcionario.size() != 0) {
+
+            int to = pageNumber * RESULTS_PER_PAGE;
+            int from = to - RESULTS_PER_PAGE;
+            for (int i = from; i < to; i++) {
             System.out.println(funcionario.get(i));
-            
-        }
       
-        System.out.println("para ir para a proxima pagina digite next ou back para voltar!");
-        String opc = sc.nextLine().toUpperCase();
-        if(opc.equals("NEXT")){
-            pageNumber += 1;
-    }
-        if (opc.equals("BACK")){
-            pageNumber -= 1;
+        
         
 
         }
+
+            System.out.println();
+            
+            System.out.println("Pagina: " + pageNumber);
+
+            System.out.println("para ir para a proxima pagina digite next ou back para voltar!");
+            String opc = sc.nextLine().toUpperCase();
+
+           
+
+
+            if(opc.equals("NEXT")){
+                pageNumber += 1;
+        }
+            if (opc.equals("BACK")){
+                pageNumber -= 1;
+    
+    
+            }
+            if (opc.equals("CANCEL")) {
+                break;
+            }
+    
+            
+           }
+
+
+        
+
+      
+
         System.out.println();
-        System.out.println(pageNumber);
-        
-        
+       
     }
+        
+    
+        
+        
+    
     public void testeFuncional(){
         for (int i = 0 ; i < 100 ; i++){
             funcionario.add(new employee((i+1), name, address, office, sex, i, Status));
