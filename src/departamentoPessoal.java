@@ -22,7 +22,6 @@ public class departamentoPessoal {
             
                 case 2:
                     funcionario.listagemFuncionarios();
-                    System.out.println();
                     break;
 
                 case 3:
@@ -47,6 +46,12 @@ public class departamentoPessoal {
                 case 7:
                     funcionario.opcoesDepartamento();
                     break;
+                case 8:
+                    funcionario.testeFuncional();
+                    System.out.println("Funcionario null adicionados para teste");
+
+                    break;
+                    
                 case 0:
                     funcionario.pararProgama();
                     break;
