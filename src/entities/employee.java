@@ -315,12 +315,13 @@ public class employee {
                 System.out.println();
                 
                 System.out.println("Pagina: " + pageNumber);
+                System.out.println();
     
-                System.out.println("para ir para a proxima pagina digite next ou back para voltar!");
+                System.out.print("para ir para a proxima pagina digite next ou back para voltar: ");
                 String opc = sc.nextLine().toUpperCase();
+                System.out.println();
     
-               
-    
+             
     
                 if(opc.equals("NEXT")){
                     pageNumber += 1;
@@ -332,6 +333,13 @@ public class employee {
                 }
                 if (opc.equals("CANCEL")) {
                     break;
+                }
+
+                  
+                if (pageNumber < 1 ) {
+                    pageNumber += 1;
+                    System.out.println("Não existem paginas anteriores... ");
+                    System.out.println();
                 }
         
                 
